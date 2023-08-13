@@ -1,11 +1,59 @@
 ![logo](web_static/images/se%20logo%20(1).png)
 
-<center>
-<h1>SwiftErrandplus</h1>
+# SwiftErrandplus
 
+## Great Minds Porfolio Project 🙌
 
-# Great Minds Porfolio Project 🙌
-</center>
+<details>
+<summary>To get started follow these steps:</summary>
+
+1. **Clone the Repository:**
+Open your terminal and run the following command to clone the repository:
+
+```bash
+git clone https://github.com/LabyKreative/swifterrandplus.git
+```
+
+2. **Navigate to the Project Directory:** Move into the cloned directory by typing:
+
+```bash
+cd swifterrandplus
+```
+
+3. **Set Up Virtual Environment**: Create a virtual environment named `.venv` for isolating project dependencies. Run this command:
+
+```bash
+py -3 -m venv .venv
+```
+
+4. **Activate the Virtual Environment:** Activate the virtual environment using this command:
+
+```bash
+.venv\Scripts\activate
+```
+
+5. **Install Dependencies:** With the virtual environment active, install the required dependencies by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. **Run the Flask App:** After installing the dependencies, you can start the Flask app by running:
+
+```bash
+flask run
+```
+
+This will start the development server, and you can access the app in your web browser at `http://127.0.0.1:5000`.
+
+7. **Deactivate the Virtual Environment:** When you're done working in the virtual environment and with the app, you can deactivate it by typing:
+
+```bash
+deactivate
+```
+
+</details>
+
 
 ### SwiftErrand+
 
