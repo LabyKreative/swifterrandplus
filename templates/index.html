@@ -20,7 +20,104 @@
       href="{{ url_for('static', filename='styles/0-index.css') }}"
     />
   </head>
-  <body>
+  <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary fixed-top"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="nav_company_name">
+          <img
+            src="{{ url_for('static', filename='images/nav_logo_light.png') }}"
+            alt="Logo"
+            class="d-inline-block align-text-top"
+            id="nav_logo"
+          />
+          SwiftErrand<span>+</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Our Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Personal Tasks:</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Grocery Shopping</a></li>
+                <li><a class="dropdown-item" href="#">School Pickups</a></li>
+                <li><a class="dropdown-item" href="#">Baby Sitting</a></li>
+                <li><a class="dropdown-item" href="#">Pet Services</a></li>
+                <li><a class="dropdown-item" href="#">Medicine Pickup</a></li>
+                <li><a class="dropdown-item" href="#">Meal Delivery</a></li>
+                <li><a class="dropdown-item" href="#">Gift Shopping</a></li>
+                <li><a class="dropdown-item" href="#">Event Supplies</a></li>
+                <li><a class="dropdown-item" href="#">Library Returns</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Clothing Alterations</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Plant Care</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Elderly Assistance</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Professional Tasks:</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="#">Document Delivery</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Dry Cleaning/Pickup</a>
+                </li>
+                <li><a class="dropdown-item" href="#">Banking Tasks</a></li>
+                <li><a class="dropdown-item" href="#">Postal Services</a></li>
+                <li><a class="dropdown-item" href="#">Tech Support</a></li>
+                <li><a class="dropdown-item" href="#">Home Cleaning</a></li>
+                <li><a class="dropdown-item" href="#">Event Supplies</a></li>
+                <li><a class="dropdown-item" href="#">Home Repairs</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
     <script src="/static/scripts/0-index.js" text type="javascript"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

@@ -4,9 +4,8 @@ Flask is a class that is used to instantiate web applications.
 from flask import Flask, render_template
 
 
-# Path: app.py
-
 app = Flask(__name__)
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 
 @app.route('/', strict_slashes=False)

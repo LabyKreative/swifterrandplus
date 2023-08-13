@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter';
+  font-weight: 200;
+  background: url('https://images.unsplash.com/photo-1511406361295-0a1ff814c0ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+}
+
+#nav_logo{
+  width: 40px;
+  height: 34px;
+}
+
+#nav_company_name{
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.navbar-brand span{
+  color: #FF4500;
+}
+
+.nav-link:hover,
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu a.dropdown-item:hover{
+  color: #FF4500;
+}
+
+.btn-outline-success{
+  border-color: #FF4500;
+  color: #FFFFFF;
+}
+
+.btn-outline-success:hover{
+  background-color: #FF4500;
+  border-color: #FF4500;
+}
