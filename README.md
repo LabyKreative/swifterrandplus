@@ -1,4 +1,4 @@
-![logo](web_static/images/se%20logo%20(1).png)
+![logo](static/images/se%20logo%20(1).png)
 
 # SwiftErrandplus
 
