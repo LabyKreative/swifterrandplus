@@ -1,4 +1,4 @@
-![logo](static/images/se%20logo%20(1).png)
+![logo](static/images/se_logo(2).png)
 
 # SwiftErrandplus
 
@@ -53,7 +53,6 @@ deactivate
 ```
 
 </details>
-
 
 ### SwiftErrand+
 
