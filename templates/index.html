@@ -331,8 +331,231 @@
         </div>
       </section>
 
-      <section class="about-us"></section>
-      <section class="contact-us"></section>
+      <section id="faq" class="p-5">
+        <div class="container">
+          <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+          <div class="accordion accordion-flush" id="questions">
+            <!-- Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#question-one"
+                >
+                  What services does your errand business/WebApp offer?
+                </button>
+              </h2>
+              <div
+                id="question-one"
+                class="accordion-collapse collapse"
+                data-bs-parent="#questions"
+              >
+                <div class="accordion-body">
+                  Our errand business/WebApp provides a wide range of services
+                  designed to ease your daily tasks. We offer services such as
+                  grocery shopping, prescription pickups, dry cleaning delivery,
+                  package sending, meal delivery, appointment scheduling, and
+                  more.
+                </div>
+              </div>
+            </div>
+            <!-- Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#question-two"
+                >
+                  How do I place an errand request using your WebApp?
+                </button>
+              </h2>
+              <div
+                id="question-two"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Placing an errand request is easy! Simply visit our website,
+                  sign up or log in, and then select the specific errand you
+                  need assistance with. Provide the necessary details, such as
+                  the items you need, the pickup/delivery location, and any
+                  special instructions. Our reliable runners will take care of
+                  the rest.
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#question-three"
+                >
+                  How do you ensure the security and confidentiality of my
+                  errands?
+                </button>
+              </h2>
+              <div id="question-three" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Your security and privacy are our top priorities. We implement
+                  strict security measures to safeguard your personal
+                  information and items. Our runners undergo thorough background
+                  checks, and we use secure communication channels for all
+                  interactions. Additionally, we have insurance coverage to
+                  protect against any unforeseen circumstances.
+                </div>
+              </div>
+            </div>
+            <!-- item 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#question-four"
+                >
+                  How do you determine the pricing for errand services?
+                </button>
+              </h2>
+              <div id="question-four" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  Our pricing is based on factors such as the type of errand,
+                  distance, complexity, and any additional services requested.
+                  You'll receive a transparent breakdown of the costs before
+                  confirming your request. We strive to offer competitive rates
+                  while ensuring the quality of service.
+                </div>
+              </div>
+            </div>
+            <!-- item 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#question-five"
+                >
+                  What is the average turnaround time for completing errand
+                  requests?
+                </button>
+              </h2>
+              <div id="question-five" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  The turnaround time varies depending on the nature of the
+                  errand and the current demand. However, we prioritize
+                  efficiency and promptness. Most errands are completed within a
+                  few hours, and we offer expedited options for urgent tasks.
+                  You'll receive real-time updates on the progress of your
+                  request through our WebApp.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="teamembers" class="p-5 bg-dark">
+        <div class="container"></div>
+        <h2 class="text-center text-white mb-5">Development Team Members</h2>
+        <p class="lead text-center text-white mb-5">
+          Our members are experienced software engineers in the industry.
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-secondary">
+              <div class="card-body text-center">
+                <img
+                  src="{{ url_for('static', filename='images/tm-img1.jpg') }}"
+                  height="100px"
+                  class="rounded-circle mb-3"
+                  alt="team-portrait1"
+                />
+                <h3 class="card-title mb-3">Joshua M.</h3>
+                <p class="card-text">
+                  A software engineer with a passion for programming that loves
+                  to code and solve real life problems with code. Cheers!
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-secondary">
+              <div class="card-body text-center">
+                <img
+                  src="{{ url_for('static', filename='images/tm-img2.jpg') }}"
+                  height="100px"
+                  class="rounded-circle mb-3"
+                  alt="team-portrait2"
+                />
+                <h3 class="card-title mb-3">Jannat N.</h3>
+                <p class="card-text">
+                  A lab technician with passion for programming that love to
+                  code and solve problems. I am a good team player.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-secondary">
+              <div class="card-body text-center">
+                <img
+                  src="{{ url_for('static', filename='images/tm-img3.jpg') }}"
+                  height="100px"
+                  class="rounded-circle mb-3"
+                  alt="team-portrait3"
+                />
+                <h3 class="card-title mb-3">Adeyemi O.</h3>
+                <p class="card-text">
+                  Skilled Software Engineer with expertise in designing and
+                  developing innovative solutions to complex problems.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-secondary">
+              <div class="card-body text-center">
+                <img
+                  src="{{ url_for('static', filename='images/tm-img4.jpg') }}"
+                  height="100px"
+                  class="rounded-circle mb-3"
+                  alt="team-portrait3"
+                />
+                <h3 class="card-title mb-3">Adegboye A.</h3>
+                <p class="card-text">
+                  A charming Software Engineer with vasts experience in creating
+                  complex software solutions to solve real life problems.
+                </p>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="blog"></section>
     </main>
 

@@ -46,10 +46,15 @@
   border-color: #FF4500;
 }
 
+section{
+  padding: 50px 0;
+  height: 50%;
+}
+
 /* Hero section */
 #hero{
   padding-top: 10%;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .tag-line{
@@ -84,6 +89,12 @@
 
 h5{
   color: #FFFFFF;
+}
+
+/* FAQ section */
+#faq{
+  background-color: #FFFFFF;
+  padding: 50px 0;
 }
 
 /* Footer */
