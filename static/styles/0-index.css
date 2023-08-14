@@ -57,6 +57,35 @@
   font-weight: 200;
 }
 
+/* Features section */
+#features{
+  background-image: url('https://media.istockphoto.com/id/993314284/photo/buy-app.jpg?s=2048x2048&w=is&k=20&c=lqJHQGeTYaS0nsUAR9gRXW7cTMc7wMnNIR16dArPEc0=');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+}
+
+/* Testimonial section */
+#testimonials{
+  text-align: center;
+  color: #343A40;
+}
+
+.testimonial-img{
+  border-radius: 100%;
+  margin: 20px;
+  width: 10%;
+}
+
+.carousel-item{
+  padding: 7% 15%;
+}
+
+h5{
+  color: #FFFFFF;
+}
+
 /* Footer */
 #footer {
   margin-top: auto;
