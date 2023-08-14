@@ -77,6 +77,12 @@ section{
   color: #343A40;
 }
 
+#testimonialheading{
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 30px;
+}
+
 .testimonial-img{
   border-radius: 100%;
   margin: 20px;
