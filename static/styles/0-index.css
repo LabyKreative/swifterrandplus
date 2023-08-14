@@ -16,6 +16,7 @@
 
 }
 
+/* Narbar */
 #nav_logo{
   width: 40px;
   height: 34px;
@@ -45,10 +46,15 @@
   border-color: #FF4500;
 }
 
-p{
-  margin-bottom: 0px;
-  color: #FF4500;
-  padding-bottom: 10px;
+/* Hero section */
+#hero{
+  padding-top: 10%;
+  margin-top: 50px;
+}
+
+.tag-line{
+  font-size: 20px;
+  font-weight: 200;
 }
 
 /* Footer */
@@ -56,15 +62,30 @@ p{
   margin-top: auto;
   padding-bottom: 0px;
   text-align: center;
+  cursor: pointer;
 }
 
 .footer-container {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    background-color: #343a40;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #FF4500;
+  border-top: #FFFFFF;
+  border-top-style: dotted;
+  border-top-width: 1px;
+}
+
+p{
+  margin-bottom: 0px;
+  color: #FFFFFF;
+  padding-bottom: 10px;
+  cursor: auto;
 }
 
 .social-icon {
-    margin: 20px 10px;
-    color: orangered
+  margin: 20px 10px;
+  color: #FFFFFF;
+}
+
+.social-icon:hover {
+  color: #343A40;
 }

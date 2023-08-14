@@ -8,6 +8,7 @@ from flask_fontawesome import FontAwesome
 app = Flask(__name__)
 fa = FontAwesome(app)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
+app.static_folder = 'static'
 
 
 @app.route('/', strict_slashes=False)

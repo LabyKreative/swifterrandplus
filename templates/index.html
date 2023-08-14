@@ -131,7 +131,52 @@
     </header>
 
     <main>
-      <section class="hero"></section>
+      <section id="hero" class="p-5">
+        <div class="container">
+          <div class="row aling-items-center justify-content-between">
+            <div class="col-md">
+              <img
+                src="{{ url_for('static', filename='images/hero_image.jpg') }}"
+                class="img-fluid rounded"
+                alt="hero"
+              />
+            </div>
+            <div class="col-md p-8">
+              <h2 id="hero-h2">
+                SwiftErrand<span><em>plus</em></span>
+              </h2>
+              <p class="tag-line"><em>...let's take care of it for you!</em></p>
+              <p id="firstParagraph">
+                Our WebApp plays a pivotal role in connecting users with
+                dedicated agents who excel in handling a wide range of household
+                errands. Our platform serves as a conduit for individuals
+                seeking solutions to various daily challenges. These can
+                encompass time constraints that prevent them from completing
+                tasks, mobility limitations that impede their movement, safety
+                concerns that require assistance, transportation obstacles,
+                distance from stores, the desire for added convenience,
+                health-related considerations, and the need for specialized
+                assistance.
+              </p>
+              <p id="secondParagraph" style="display: none">
+                Our mission is to alleviate these hurdles by seamlessly pairing
+                users with experienced agents who are committed to providing
+                comprehensive support. Our unique approach ensures that users
+                can delegate errands and responsibilities to trustworthy
+                professionals, freeing up their time and energy to focus on what
+                truly matters to them. Through our innovative platform, we
+                create a harmonious synergy between users' needs and agents'
+                expertise, offering a convenient and efficient solution to the
+                challenges of modern life.
+              </p>
+              <a href="#" class="btn btn-light mt-3" id="readMoreButton">
+                <i class="bi bi-chevron-right"></i>Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="features"></section>
       <section class="how-it-works"></section>
       <section class="testimonials"></section>
@@ -143,6 +188,7 @@
 
     <footer id="footer">
       <div class="footer-container">
+        <a href=""><i class="social-icon fa-brands fa-github fa-lg"></i></a>
         <a href=""><i class="social-icon fab fa-facebook-f fa-lg"></i></a>
         <a href=""><i class="social-icon fab fa-twitter fa-lg"></i></a>
         <a href=""><i class="social-icon fab fa-instagram fa-lg"></i></a>
@@ -157,5 +203,6 @@
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="{{ url_for('static', filename='scripts/0-index.js') }}"></script>
   </body>
 </html>
