@@ -103,12 +103,21 @@ h5{
   padding: 50px 0;
 }
 
+/* Team members */
+
+/* Map */
+#map{
+    width: 100%;
+    height: 400px;
+}
+
 /* Footer */
 #footer {
   margin-top: auto;
   padding-bottom: 0px;
   text-align: center;
   cursor: pointer;
+  bottom: 0;
 }
 
 .footer-container {
@@ -130,8 +139,18 @@ p{
 .social-icon {
   margin: 20px 10px;
   color: #FFFFFF;
+  transition: color 0.3s ease;
 }
 
 .social-icon:hover {
+  color: #343A40;
+}
+
+#scrollup {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+#scrollup:hover {
   color: #343A40;
 }
