@@ -8,14 +8,14 @@ from flask_fontawesome import FontAwesome
 app = Flask(__name__)
 fa = FontAwesome(app)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-app.static_folder = 'static'
+app.static_folder = "static"
 
 
-@app.route('/', strict_slashes=False)
+@app.route("/", strict_slashes=False)
 def home_page():
     """Return the landing page."""
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
