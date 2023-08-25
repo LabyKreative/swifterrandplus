@@ -1,3 +1,6 @@
 {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "[django-html]": {
+        "editor.formatOnSave": false
+    }
 }

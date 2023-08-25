@@ -5,60 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SwiftErrand+</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/83905eaae9.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="icon"
-      href="{{ url_for('static', filename='images/icon_dark.png') }}"
-      type="image/png"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='styles/0-index.css') }}"
-    />
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon_dark.png') }}" type="image/png"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/0-index.css') }}"/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet"/>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script src="https://kit.fontawesome.com/83905eaae9.js" crossorigin="anonymous"></script>
   </head>
   <body class="p-3 m-0 border-0 bd-example m-0 border-0">
     <header>
-      <nav
-        class="navbar navbar-expand-lg bg-body-tertiary fixed-top"
-        data-bs-theme="dark"
-      >
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#" id="nav_company_name">
-            <img
-              src="{{ url_for('static', filename='images/nav_logo_light.png') }}"
-              alt="Logo"
-              class="d-inline-block align-text-top"
-              id="nav_logo"
-            />
+            <img src="{{ url_for('static', filename='images/nav_logo_light.png') }}" alt="Logo" class="d-inline-block align-text-top" id="nav_logo"/>
             SwiftErrand<span>+</span>
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,21 +33,13 @@
                 <a class="nav-link" href="#">About Us</a>
               </li>
               <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Our Services
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Personal Tasks:</a></li>
                   <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Grocery Shopping</a>
-                  </li>
+                  <li><a class="dropdown-item" href="#">Grocery Shopping</a></li>
                   <li><a class="dropdown-item" href="#">School Pickups</a></li>
                   <li><a class="dropdown-item" href="#">Baby Sitting</a></li>
                   <li><a class="dropdown-item" href="#">Pet Services</a></li>
@@ -93,24 +48,14 @@
                   <li><a class="dropdown-item" href="#">Gift Shopping</a></li>
                   <li><a class="dropdown-item" href="#">Event Supplies</a></li>
                   <li><a class="dropdown-item" href="#">Library Returns</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Clothing Alterations</a>
-                  </li>
+                  <li><a class="dropdown-item" href="#">Clothing Alterations</a></li>
                   <li><a class="dropdown-item" href="#">Plant Care</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Elderly Assistance</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Professional Tasks:</a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Document Delivery</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Dry Cleaning/Pickup</a>
-                  </li>
+                  <li><a class="dropdown-item" href="#">Elderly Assistance</a>
+                  </li><li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Professional Tasks:</a>
+                  </li><li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Document Delivery</a></li>
+                  <li><a class="dropdown-item" href="#">Dry Cleaning/Pickup</a></li>
                   <li><a class="dropdown-item" href="#">Banking Tasks</a></li>
                   <li><a class="dropdown-item" href="#">Postal Services</a></li>
                   <li><a class="dropdown-item" href="#">Tech Support</a></li>
@@ -119,20 +64,11 @@
                   <li><a class="dropdown-item" href="#">Home Repairs</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Contact Us</a>
-              </li>
+              <li class="nav-item"><a class="nav-link">Contact Us</a></li>
             </ul>
             <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+              <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
         </div>
@@ -144,11 +80,7 @@
         <div class="container">
           <div class="row aling-items-center justify-content-between">
             <div class="col-md">
-              <img
-                src="{{ url_for('static', filename='images/hero_image.jpg') }}"
-                class="img-fluid rounded-start-pill"
-                alt="hero"
-              />
+              <img src="{{ url_for('static', filename='images/hero_image.jpg') }}" class="img-fluid rounded-start-pill" alt="hero"/>
             </div>
             <div class="col-md p-8">
               <h2 id="hero-h2">
@@ -253,11 +185,7 @@
                 groceries to dry cleaning, it's my trusted solution, offering
                 unmatched convenience and reliability."
               </h5>
-              <img
-                class="testimonial-img"
-                src="{{ url_for('static', filename='images/testimonial-pix(2).jpg') }}"
-                alt="testimonial-pix"
-              />
+              <img class="testimonial-img" src="{{ url_for('static', filename='images/testimonial-pix(2).jpg') }}" alt="testimonial-pix"/>
               <p><em>Samantha R. - Busy Professional</em></p>
             </div>
             <div class="carousel-item container-fluid">
@@ -268,11 +196,7 @@
                 schedule medical appointments. This app truly caters to the
                 needs of seniors like me."
               </h5>
-              <img
-                class="testimonial-img"
-                src="{{ url_for('static', filename='images/testimonial-pix(1).jpg') }}"
-                alt="testimonial-pix"
-              />
+              <img class="testimonial-img" src="{{ url_for('static', filename='images/testimonial-pix(1).jpg') }}" alt="testimonial-pix"/>
               <p><em>Mike H. - Senior Citizen</em></p>
             </div>
             <div class="carousel-item container-fluid">
@@ -282,11 +206,7 @@
                 commitments. From groceries to dry cleaning, it's my go-to
                 solution, offering unmatched convenience and reliability."
               </h5>
-              <img
-                class="testimonial-img"
-                src="{{ url_for('static', filename='images/testimonial-pix(2).jpg') }}"
-                alt="testimonial-pix"
-              />
+              <img class="testimonial-img" src="{{ url_for('static', filename='images/testimonial-pix(2).jpg') }}" alt="testimonial-pix"/>
               <p><em>Samantha R. - Busy Professional</em></p>
             </div>
             <div class="carousel-item container-fluid">
@@ -296,11 +216,7 @@
                 errands, saving me countless hours. From school drop-offs to
                 home repairs, SwiftErrand+ simplifies my daily routine."
               </h5>
-              <img
-                class="testimonial-img"
-                src="{{ url_for('static', filename='images/testimonial-pix(3).jpg') }}"
-                alt="testimonial-pix"
-              />
+              <img class="testimonial-img" src="{{ url_for('static', filename='images/testimonial-pix(3).jpg') }}" alt="testimonial-pix"/>
               <p><em>Emma S. - Working Mom</em></p>
             </div>
             <div class="carousel-item container-fluid">
@@ -310,29 +226,15 @@
                 quick meals. Its swift, reliable service grants me the freedom
                 to prioritize studies and passions amidst my busy schedule."
               </h5>
-              <img
-                class="testimonial-img"
-                src="{{ url_for('static', filename='images/testimonial-pix(4).jpg') }}"
-                alt="testimonial-pix"
-              />
+              <img class="testimonial-img" src="{{ url_for('static', filename='images/testimonial-pix(4).jpg') }}" alt="testimonial-pix"/>
               <p><em>Jason M. - College Student</em></p>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#testimonial-carousel"
-            data-bs-slide="prev"
-          >
+          <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#testimonial-carousel"
-            data-bs-slide="next"
-          >
+          <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -346,20 +248,11 @@
             <!-- Item 1 -->
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-one"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">
                   What services does your errand business/WebApp offer?
                 </button>
               </h2>
-              <div
-                id="question-one"
-                class="accordion-collapse collapse"
-                data-bs-parent="#questions"
-              >
+              <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
                 <div class="accordion-body">
                   Our errand business/WebApp provides a wide range of services
                   designed to ease your daily tasks. We offer services such as
@@ -372,20 +265,11 @@
             <!-- Item 2 -->
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-two"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">
                   How do I place an errand request using your WebApp?
                 </button>
               </h2>
-              <div
-                id="question-two"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordionFlushExample"
-              >
+              <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                   Placing an errand request is easy! Simply visit our website,
                   sign up or log in, and then select the specific errand you
@@ -399,12 +283,7 @@
             <!-- Item 3 -->
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-three"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">
                   How do you ensure the security and confidentiality of my
                   errands?
                 </button>
@@ -423,12 +302,7 @@
             <!-- item 4 -->
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-four"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">
                   How do you determine the pricing for errand services?
                 </button>
               </h2>
@@ -445,12 +319,7 @@
             <!-- item 5 -->
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#question-five"
-                >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">
                   What is the average turnaround time for completing errand
                   requests?
                 </button>
@@ -480,12 +349,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="card bg-secondary">
               <div class="card-body text-center">
-                <img
-                  src="{{ url_for('static', filename='images/tm-img1.jpg') }}"
-                  height="100px"
-                  class="rounded-circle mb-3"
-                  alt="team-portrait1"
-                />
+                <img src="{{ url_for('static', filename='images/tm-img1.jpg') }}" height="100px" class="rounded-circle mb-3" alt="team-portrait1"/>
                 <h3 class="card-title mb-3">Joshua M.</h3>
                 <p class="card-text">
                   A software engineer with a passion for programming that loves
@@ -501,12 +365,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="card bg-secondary">
               <div class="card-body text-center">
-                <img
-                  src="{{ url_for('static', filename='images/tm-img2.jpg') }}"
-                  height="100px"
-                  class="rounded-circle mb-3"
-                  alt="team-portrait2"
-                />
+                <img src="{{ url_for('static', filename='images/tm-img2.jpg') }}" height="100px" class="rounded-circle mb-3" alt="team-portrait2"/>
                 <h3 class="card-title mb-3">Jannat N.</h3>
                 <p class="card-text">
                   A lab technician with passion for programming that love to
@@ -522,12 +381,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="card bg-secondary">
               <div class="card-body text-center">
-                <img
-                  src="{{ url_for('static', filename='images/tm-img3.jpg') }}"
-                  height="100px"
-                  class="rounded-circle mb-3"
-                  alt="team-portrait3"
-                />
+                <img src="{{ url_for('static', filename='images/tm-img3.jpg') }}" height="100px" class="rounded-circle mb-3" alt="team-portrait3"/>
                 <h3 class="card-title mb-3">Adeyemi O.</h3>
                 <p class="card-text">
                   Skilled Software Engineer with expertise in designing and
@@ -543,12 +397,7 @@
           <div class="col-md-6 col-lg-3">
             <div class="card bg-secondary">
               <div class="card-body text-center">
-                <img
-                  src="{{ url_for('static', filename='images/tm-img4.jpg') }}"
-                  height="100px"
-                  class="rounded-circle mb-3"
-                  alt="team-portrait3"
-                />
+                <img src="{{ url_for('static', filename='images/tm-img4.jpg') }}" height="100px" class="rounded-circle mb-3" alt="team-portrait3"/>
                 <h3 class="card-title mb-3">Adegboye A.</h3>
                 <p class="card-text">
                   A charming Software Engineer with vasts experience in creating
