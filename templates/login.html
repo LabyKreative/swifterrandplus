@@ -43,6 +43,11 @@
       </nav>
     </header>
 
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">{% trans "Continue" %}</button>
+    </form>
 
     <footer id="footer" class="p-5 text-white text-center position-relative">
       <div class="footer-container">

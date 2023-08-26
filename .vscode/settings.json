@@ -2,5 +2,6 @@
     "editor.formatOnSave": true,
     "[django-html]": {
         "editor.formatOnSave": false
-    }
+    },
+    "code-runner.clearPreviousOutput": false
 }
