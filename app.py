@@ -20,7 +20,7 @@ fa = FontAwesome(app)
 @app.route("/", strict_slashes=False)
 def landing_page():
     """Return the landing page."""
-    return render_template("base.html")
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
