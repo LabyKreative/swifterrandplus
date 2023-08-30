@@ -85,7 +85,7 @@ Welcome to SwiftErrandplus, your personal errand assistant that simplifies your 
 
 <details>
     <summary>SwiftErrand+</summary>
-    is a user-friendly web app designed to connect users with reliable agents who can handle a wide range of errands and tasks. Our platform provides a seamless way to delegate tasks, whether it's grocery shopping, school pickups, document deliveries, cleaning, or any other errand you need assistance with. With a focus on convenience, efficiency, and exceptional user experience, ErrandGenie is your go-to solution for managing your daily tasks effortlessly.
+    is a user-friendly web app designed to connect users with reliable agents who can handle a wide range of errands and tasks. Our platform provides a seamless way to delegate tasks, whether it's grocery shopping, school pickups, document deliveries, cleaning, or any other errand you need assistance with. With a focus on convenience, efficiency, and exceptional user experience, SwiftErrand+ is your go-to solution for managing your daily tasks effortlessly.
 </details>
 
 ## Features
@@ -159,10 +159,10 @@ Welcome to SwiftErrandplus, your personal errand assistant that simplifies your 
 <details>
     <summary>Used:</summary>
     <ul>
-        <li><b>Frontend:</b> HTML, CSS, JavaScript</li>
+        <li><b>Frontend:</b> HTML, CSS, Boostrap, FontAwesome, JavaScript</li>
         <li><b>Backend:</b> Python, Flask</li>
         <li><b>Database:</b> SQLite</li>
-        <li><b>Third-party APIs:</b> Google Maps, Twilio, Stripe</li>
+        <li><b>Third-party APIs:</b>MapBox, Google Maps, Twilio, Stripe</li>
     </ul>
 </details>
 
