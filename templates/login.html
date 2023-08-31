@@ -8,7 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
     <link rel="icon" href="{{ url_for('static', filename='images/icon_dark.png') }}" type="image/png"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/0-index.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}"/>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet"/>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
     <script src="https://kit.fontawesome.com/83905eaae9.js" crossorigin="anonymous"></script>
@@ -26,13 +27,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Register</a>
-              </li>
-              <li class="nav-item"><a class="nav-link">Login</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link active" arial-current="page">Login</a></li>
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -43,11 +41,50 @@
       </nav>
     </header>
 
-    <form method="post">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">{% trans "Continue" %}</button>
-    </form>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+       <div class="row border rounded-5 p-3 bg-white shadow box-area">
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #343A40;">
+           <div class="featured-image mb-3">
+            <img src="{{ url_for('static', filename='images/nav_logo_light.png') }}" class="img-fluid" style="width: 200px;">
+           </div>
+           <p class="text-white fs-2">We're here!</p>
+           <small class="text-white text-wrap text-center">Let's take care of it for you!.</small>
+       </div>
+
+       <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+                <div class="header-text mb-4">
+                     <h2>We're happy to have you!</h2>
+                     <p>We are happy to have you back.</p>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
+                </div>
+                <div class="input-group mb-1">
+                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
+                </div>
+                <div class="input-group mb-5 d-flex justify-content-between">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="formCheck">
+                        <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+                    </div>
+                    <div class="forgot">
+                        <small><a href="#">Forgot Password?</a></small>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <a href="#" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
+                </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-light w-100 fs-6"><img src="{{ url_for('static', filename='images/google.png') }}" style="width:20px" class="me-2"><small>Sign In with Google</small></button>
+                </div>
+                <div class="row">
+                    <small>Don't have account? <a href="#">Sign Up</a></small>
+                </div>
+          </div>
+       </div>
+      </div>
+    </div>
 
     <footer id="footer" class="p-5 text-white text-center position-relative">
       <div class="footer-container">
@@ -61,6 +98,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='scripts/0-index.js') }}"></script>
   </body>
 </html>
