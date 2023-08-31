@@ -18,24 +18,6 @@ app.static_folder = "static"
 fa = FontAwesome(app)
 
 
-# Configuration for Google OAuth
-# oauth = OAuth(app)
-
-# google = oauth.remote_app(
-#     'google',
-#     consumer_key='your_google_client_id',
-#     consumer_secret='your_google_client_secret',
-#     request_token_params={
-#         'scope': 'email',
-#     },
-#     base_url='https://www.googleapis.com/oauth2/v1/',
-#     request_token_url=None,
-#     access_token_method='POST',
-#     access_token_url='https://accounts.google.com/o/oauth2/token',
-#     authorize_url='https://accounts.google.com/o/oauth2/auth',
-# )
-
-
 @app.route("/", strict_slashes=False)
 def landing_page():
     """Return the landing page with a sign-in button."""
@@ -49,33 +31,23 @@ def login():
     # return google.authorize(callback=url_for('authorized', _external=True))
 
 
-# @app.route("/logout")
-# def logout():
-#     """Logout the user and clear session data."""
-#     session.pop('google_token', None)
-#     return redirect(url_for('landing_page'))
+@app.route("/login/authorized", strict_slashes=False)
+def authorized():
+    """Callback after successful Google OAuth authorization."""
+    return redirect(url_for('user_dashboard'))
 
 
-# @app.route("/login/authorized")
-# def authorized():
-#     """Callback after successful Google OAuth authorization."""
-#     response = google.authorized_response()
-#     if response is None or response.get('access_token') is None:
-#         return "Access denied: reason={} error={}".format(
-#             request.args['error_reason'],
-#             request.args['error_description']
-#         )
+@app.route("/user_dashboard", strict_slashes=False)
+def user_dashboard():
+    """Return the user to dashboard."""
+    return render_template('user_dashboard.html')
 
-#     session['google_token'] = (response['access_token'], '')
-#     user_info = google.get('userinfo')
 
-#     # Store or use user_info as needed
+@app.route("/logout", strict_slashes=False)
+def logout():
+    """Logout the user and clear session data."""
+    return redirect(url_for('landing_page'))
 
-#     return redirect(url_for('user_dashboard'))
-
-# @google.tokengetter
-# def get_google_oauth_token():
-#     return session.get('google_token')
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

@@ -48,7 +48,7 @@
             <img src="{{ url_for('static', filename='images/nav_logo_light.png') }}" class="img-fluid" style="width: 200px;">
            </div>
            <p class="text-white fs-2">We're here!</p>
-           <small class="text-white text-wrap text-center">Let's take care of it for you!.</small>
+           <small class="text-white text-wrap text-center">Let's take care of it for you!</small>
        </div>
 
        <div class="col-md-6 right-box">
@@ -73,10 +73,18 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <a href="#" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
+                  <a href="{{ url_for('user_dashboard', next='dashboard') }}" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
                 </div>
                 <div class="input-group mb-3">
-                    <button class="btn btn-lg btn-light w-100 fs-6"><img src="{{ url_for('static', filename='images/google.png') }}" style="width:20px" class="me-2"><small>Sign In with Google</small></button>
+                  <button class="btn btn-lg btn-light w-100 fs-6">
+                    <img src="{{ url_for('static', filename='images/google.png') }}" style="width:20px" class="me-2">
+                    <small>
+                      <a href="{{ url_for('user_dashboard', next='dashboard') }}" style="text-decoration: none; color: inherit;">
+                        <span onmouseover="this.style.color = 'white'" onmouseout="this.style.color = 'inherit'">Sign In with Google</span>
+                      </a>
+                    </small>
+                  </button>
+
                 </div>
                 <div class="row">
                     <small>Don't have account? <a href="#">Sign Up</a></small>
