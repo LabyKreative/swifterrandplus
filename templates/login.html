@@ -16,25 +16,54 @@
   </head>
   <body class="p-3 m-0 border-0 bd-example m-0 border-0">
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary fixed-top"
+        data-bs-theme="dark"
+      >
         <div class="container-fluid">
           <a class="navbar-brand" href="#" id="nav_company_name">
-            <img src="{{ url_for('static', filename='images/nav_logo_light.png') }}" alt="Logo" class="d-inline-block align-text-top" id="nav_logo"/>
+            <img
+              src="{{ url_for('static', filename='images/nav_logo_light.png') }}"
+              alt="Logo"
+              class="d-inline-block align-text-top"
+              id="nav_logo"
+            />
             SwiftErrand<span>+</span>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-              <li class="nav-item"><a class="nav-link active" arial-current="page">Login</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" arial-current="page">Login</a>
+              </li>
             </ul>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
             </form>
           </div>
         </div>
@@ -42,65 +71,64 @@
     </header>
 
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-       <div class="row border rounded-5 p-3 bg-white shadow box-area">
-       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #343A40;">
-           <div class="featured-image mb-3">
-            <img src="{{ url_for('static', filename='images/nav_logo_light.png') }}" class="img-fluid" style="width: 200px;">
-           </div>
-           <p class="text-white fs-2">We're here!</p>
-           <small class="text-white text-wrap text-center">Let's take care of it for you!</small>
-       </div>
-
-       <div class="col-md-6 right-box">
-          <div class="row align-items-center">
-                <div class="header-text mb-4">
-                     <h2>We're happy to have you!</h2>
-                     <p>We are happy to have you back.</p>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address">
-                </div>
-                <div class="input-group mb-1">
-                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password">
-                </div>
-                <div class="input-group mb-5 d-flex justify-content-between">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="formCheck">
-                        <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
-                    </div>
-                    <div class="forgot">
-                        <small><a href="#">Forgot Password?</a></small>
-                    </div>
-                </div>
-                <div class="input-group mb-3">
-                  <a href="{{ url_for('user_dashboard', next='dashboard') }}" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
-                </div>
-                <div class="input-group mb-3">
-                  <button class="btn btn-lg btn-light w-100 fs-6">
-                    <img src="{{ url_for('static', filename='images/google.png') }}" style="width:20px" class="me-2">
-                    <small>
-                      <a href="{{ url_for('user_dashboard', next='dashboard') }}" style="text-decoration: none; color: inherit;">
-                        <span onmouseover="this.style.color = 'white'" onmouseout="this.style.color = 'inherit'">Sign In with Google</span>
-                      </a>
-                    </small>
-                  </button>
-
-                </div>
-                <div class="row">
-                    <small>Don't have account? <a href="#">Sign Up</a></small>
-                </div>
+      <div class="row border rounded-5 p-3 bg-white shadow box-area">
+        <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #343a40">
+          <div class="featured-image mb-3">
+            <img src="{{ url_for('static', filename='images/nav_logo_light.png') }}" class="img-fluid" style="width: 200px"/>
           </div>
-       </div>
+          <p class="text-white fs-2">We're here!</p>
+          <small class="text-white text-wrap text-center">Let's take care of it for you!</small>
+        </div>
+
+        <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+            <div class="header-text mb-4">
+              <h2>We're happy to have you!</h2>
+              <p>We are happy to have you back.</p>
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email address"/>
+            </div>
+            <div class="input-group mb-1">
+              <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password"/>
+            </div>
+            <div class="input-group mb-5 d-flex justify-content-between">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="formCheck"/>
+                <label for="formCheck" class="form-check-label text-secondary"><small>Remember Me</small></label>
+              </div>
+              <div class="forgot">
+                <small><a href="#">Forgot Password?</a></small>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <a href="{{ url_for('user_dashboard', next='dashboard') }}" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
+            </div>
+            <div class="input-group mb-3">
+              <button class="btn btn-lg btn-light w-100 fs-6">
+                <img src="{{ url_for('static', filename='images/google.png') }}" style="width: 20px" class="me-2"/>
+                <small>
+                  <a href="{{ url_for('user_dashboard', next='dashboard') }}" style="text-decoration: none; color: inherit">
+                    <span onmouseover="this.style.color = 'white'" omouseout="this.style.color = 'inherit'">Sign In with Google</span>
+                  </a>
+                </small>
+              </button>
+            </div>
+            <div class="row">
+              <small>Don't have account? <a href="#">Sign Up</a></small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <footer id="footer" class="p-5 text-white text-center position-relative">
       <div class="footer-container">
-        <a href=""><i class="social-icon fa-brands fa-github fa-lg"></i></a>
-        <a href=""><i class="social-icon fab fa-facebook-f fa-lg"></i></a>
-        <a href=""><i class="social-icon fab fa-twitter fa-lg"></i></a>
-        <a href=""><i class="social-icon fab fa-instagram fa-lg"></i></a>
-        <a href=""><i class="social-icon fas fa-envelope fa-lg"></i></a>
+        <a href="#"><i class="social-icon fa-brands fa-github fa-lg"></i></a>
+        <a href="#"><i class="social-icon fab fa-facebook-f fa-lg"></i></a>
+        <a href="#"><i class="social-icon fab fa-twitter fa-lg"></i></a>
+        <a href="#"><i class="social-icon fab fa-instagram fa-lg"></i></a>
+        <a href="#"><i class="social-icon fas fa-envelope fa-lg"></i></a>
         <p>&copy Bumiche, Jma85 & LabyKreative 2023 Portfolio Project</p>
       </div>
     </footer>
