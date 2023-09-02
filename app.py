@@ -2,20 +2,32 @@
 Flask is a class that is used to instantiate web applications.
 """
 import os
+from flask import request
 from dotenv import load_dotenv
-from flask import Flask, render_template, redirect, url_for, session, request
-# from flask_oauthlib.client import OAuth
+from flask import Flask, render_template, redirect, url_for, session
+from authlib.integrations.flask_client import OAuth
 from flask_fontawesome import FontAwesome
-
 
 load_dotenv()  # take environment variables from .env.
 
 app = Flask(__name__)
-
 app.secret_key = os.environ["APP_SECRET_KEY"]
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.static_folder = "static"
 fa = FontAwesome(app)
+
+
+# OAuth Config
+oauth = OAuth(app)
+google = oauth.register(
+    name='swifterrandplus',
+    client_id=os.environ['GOOGLE_CLIENT_ID'],
+    client_secret=os.environ['GOOGLE_CLIENT_SECRET'],
+    authorize_url='https://accounts.google.com/o/oauth2/auth',
+    authorize_params=None,
+    client_kwargs={'scope': 'openid profile email'},
+    server_metadata_url=os.environ['GOOGLE_META_URL'],
+)
 
 
 @app.route("/", strict_slashes=False)
@@ -27,13 +39,19 @@ def landing_page():
 @app.route("/login")
 def login():
     """Initiate the Google OAuth login process."""
-    return render_template("login.html")
-    # return google.authorize(callback=url_for('authorized', _external=True))
+    google = oauth.create_client('swifterrandplus')
+    redirect_uri = url_for('authorize', _external=True)
+    return google.authorize_redirect(redirect_uri)
 
 
-@app.route("/login/authorized", strict_slashes=False)
+@app.route("/authorize", strict_slashes=False)
 def authorized():
     """Callback after successful Google OAuth authorization."""
+    token = google = oauth.create_client('swifterrandplus')
+    user_info = google.parse_id_token(token, nonce=session['nonce'])
+    # Store user information in the sessio
+    session['profile'] = user_info
+    session.permanent = True
     return redirect(url_for('user_dashboard'))
 
 
@@ -46,6 +64,7 @@ def user_dashboard():
 @app.route("/logout", strict_slashes=False)
 def logout():
     """Logout the user and clear session data."""
+    session.pop('profile', None)
     return redirect(url_for('landing_page'))
 
 
