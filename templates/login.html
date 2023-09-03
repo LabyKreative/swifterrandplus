@@ -87,7 +87,7 @@
               <button class="btn btn-lg btn-light w-100 fs-6">
                 <img src="{{ url_for('static', filename='images/google.png') }}" style="width: 20px" class="me-2"/>
                 <small>
-                  <a href="{{ url_for('user_dashboard', next='dashboard') }}" style="text-decoration: none; color: inherit">
+                  <a href="{{ url_for('google.login', next='google-signin') }}" style="text-decoration: none; color: inherit">
                     <span onmouseover="this.style.color = 'white'" omouseout="this.style.color = 'inherit'">Sign In with Google</span>
                   </a>
                 </small>
