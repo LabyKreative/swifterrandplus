@@ -40,7 +40,7 @@
             </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn-outline-light" type="submit">
                 Search
               </button>
             </form>
@@ -84,17 +84,17 @@
               <a href="{{ url_for('user_dashboard', next='dashboard') }}" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
             </div>
             <div class="input-group mb-3">
-              <button class="btn btn-lg btn-light w-100 fs-6">
+              <button class="btn btn-lg btn-dark w-100 fs-6">
                 <img src="{{ url_for('static', filename='images/google.png') }}" style="width: 20px" class="me-2"/>
                 <small>
-                  <a href="{{ url_for('google.login', next='google-signin') }}" style="text-decoration: none; color: inherit">
+                  <a href="#" style="text-decoration: none; color: inherit">
                     <span onmouseover="this.style.color = 'white'" omouseout="this.style.color = 'inherit'">Sign In with Google</span>
                   </a>
                 </small>
               </button>
             </div>
             <div class="row">
-              <small>Don't have account? <a href="#">Sign Up</a></small>
+              <small>Don't have account? <a href="#">Register</a></small>
             </div>
           </div>
         </div>

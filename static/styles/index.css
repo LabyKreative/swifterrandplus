@@ -35,12 +35,12 @@
   color: #FF4500;
 }
 
-.btn-outline-success{
+.btn-outline-light{
   border-color: #FF4500;
   color: #FFFFFF;
 }
 
-.btn-outline-success:hover{
+.btn-outline-light:hover{
   background-color: #FF4500;
   border-color: #FF4500;
 }
