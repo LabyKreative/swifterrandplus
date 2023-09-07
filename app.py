@@ -7,14 +7,16 @@ from flask import Flask, render_template, redirect, url_for, session
 from flask_fontawesome import FontAwesome
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import InputRequired, Email, Length, EqualTo, ValidationError
 
 load_dotenv()  # take environment variables from .env.
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
 
-db.init_app(app)
 app.secret_key = os.environ["APP_SECRET_KEY"]
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.static_folder = "static"
@@ -37,22 +39,70 @@ class User(db.Model, UserMixin):
         self.date_created = date_created
 
 
+class SignupForm(FlaskForm):
+    """Create a Signup form."""
+    username = StringField(
+        'Username',
+        validators=[InputRequired(), Length(min=4, max=15)],
+        render_kw={"placeholder": "Username"}
+    )
+    email = StringField(
+        'Email',
+        validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)],
+        render_kw={"placeholder": "Email"}
+    )
+    password = PasswordField(
+        'Password',
+        validators=[InputRequired(), Length(min=8, max=30)],
+        render_kw={"placeholder": "Password"}
+    )
+    confirm_password = PasswordField(
+        'Confirm Password',
+        validators=[InputRequired(), EqualTo('password')],
+        render_kw={"placeholder": "Confirm Password"}
+    )
+    submit = SubmitField('Sign Up')
+
+    def validate_username(self, username):
+        """Validate the username."""
+        existing_user_username = User.query.filter_by(username=username.data).first()
+        if existing_user_username:
+            raise ValidationError("That username already exists. Please choose a different one.")
+
+
+class LoginForm(FlaskForm):
+    """Create a Login form."""
+    username = StringField(
+        'Username',
+        validators=[InputRequired(), Length(min=4, max=15)],
+        render_kw={"placeholder": "Username"})
+    password = PasswordField(
+        'Password',
+        validators=[InputRequired(), Length(min=8, max=30)],
+        render_kw={"placeholder": "Password"}
+    )
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
+
+
 @app.route("/", strict_slashes=False)
 def landing_page():
     """Return the landing page with a sign-in button."""
     return render_template("index.html")
 
 
-@app.route("/login", strict_slashes=False)
+@app.route("/login", strict_slashes=False, methods=["GET", "POST"])
 def login():
     """Return the login page."""
-    return render_template("login.html")
+    form = LoginForm()
+    return render_template("login.html", form=form)
 
 
-@app.route("/signup", strict_slashes=False)
+@app.route("/signup", strict_slashes=False, methods=["GET", "POST"])
 def signup():
     """Return the signup page."""
-    return render_template("signup.html")
+    form = SignupForm()
+    return render_template("signup.html", form=form)
 
 
 @app.route("/user_dashboard", strict_slashes=False)
