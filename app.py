@@ -40,7 +40,7 @@ class User(db.Model, UserMixin):
 
 
 class SignupForm(FlaskForm):
-    """Create a Signup form."""
+    """Create a Sign-up form."""
     username = StringField(
         'Username',
         validators=[InputRequired(), Length(min=4, max=15)],
@@ -64,7 +64,7 @@ class SignupForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
-        """Validate the username."""
+        """Validate the user-name."""
         existing_user_username = User.query.filter_by(username=username.data).first()
         if existing_user_username:
             raise ValidationError("That username already exists. Please choose a different one.")

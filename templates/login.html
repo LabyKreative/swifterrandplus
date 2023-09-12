@@ -83,14 +83,10 @@
               <a href="{{ url_for('user_dashboard', next='dashboard') }}" class="btn btn-lg btn-dark w-100 fs-6">Login</a>
             </div>
             <div class="input-group mb-3">
-              <button class="btn btn-lg btn-dark w-100 fs-6">
-                <img src="{{ url_for('static', filename='images/google.png') }}" style="width: 20px" class="me-2"/>
-                <small>
-                  <a href="#" style="text-decoration: none; color: inherit">
-                    <span onmouseover="this.style.color = 'white'" omouseout="this.style.color = 'inherit'">Sign In with Google</span>
-                  </a>
-                </small>
-              </button>
+                <button class="btn btn-lg btn-dark w-100 fs-6" onclick="window.location.href='#'">
+                    <img src="{{ url_for('static', filename='images/google.png') }}" style="width: 20px" class="me-2" />
+                    <small>Sign In with Google</small>
+                </button>
             </div>
             <div class="row">
               <small>Don't have account? <a href="{{ url_for('signup') }}">Sign Up</a></small>
