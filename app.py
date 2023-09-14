@@ -11,12 +11,19 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import InputRequired, Email, Length, EqualTo, ValidationError
 
+
 load_dotenv()  # take environment variables from .env.
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
+
+with app.app_context():
+    print("Creating database tables...")
+    db.create_all()
+    print("Tables created")
+
 
 app.app_context().push()
 
@@ -28,6 +35,7 @@ fa = FontAwesome(app)
 
 class User(db.Model, UserMixin):
     """Create a User table in the database."""
+
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
@@ -44,48 +52,53 @@ class User(db.Model, UserMixin):
 
 class SignupForm(FlaskForm):
     """Create a Sign-up form."""
+
     username = StringField(
-        'Username',
+        "Username",
         validators=[InputRequired(), Length(min=4, max=15)],
-        render_kw={"placeholder": "Username"}
+        render_kw={"placeholder": "Username"},
     )
     email = StringField(
-        'Email',
-        validators=[InputRequired(), Email(message='Invalid email'), Length(max=50)],
-        render_kw={"placeholder": "Email"}
+        "Email",
+        validators=[InputRequired(), Email(message="Invalid email"), Length(max=50)],
+        render_kw={"placeholder": "Email"},
     )
     password = PasswordField(
-        'Password',
+        "Password",
         validators=[InputRequired(), Length(min=8, max=30)],
-        render_kw={"placeholder": "Password"}
+        render_kw={"placeholder": "Password"},
     )
     confirm_password = PasswordField(
-        'Confirm Password',
-        validators=[InputRequired(), EqualTo('password')],
-        render_kw={"placeholder": "Confirm Password"}
+        "Confirm Password",
+        validators=[InputRequired(), EqualTo("password")],
+        render_kw={"placeholder": "Confirm Password"},
     )
-    submit = SubmitField('Sign Up')
+    submit = SubmitField("Sign Up")
 
     def validate_username(self, username):
         """Validate the user-name."""
         existing_user_username = User.query.filter_by(username=username.data).first()
         if existing_user_username:
-            raise ValidationError("That username already exists. Please choose a different one.")
+            raise ValidationError(
+                "That username already exists. Please choose a different one."
+            )
 
 
 class LoginForm(FlaskForm):
     """Create a Login form."""
+
     username = StringField(
-        'Username',
+        "Username",
         validators=[InputRequired(), Length(min=4, max=15)],
-        render_kw={"placeholder": "Username"})
-    password = PasswordField(
-        'Password',
-        validators=[InputRequired(), Length(min=8, max=30)],
-        render_kw={"placeholder": "Password"}
+        render_kw={"placeholder": "Username"},
     )
-    remember = BooleanField('Remember Me')
-    submit = SubmitField('Login')
+    password = PasswordField(
+        "Password",
+        validators=[InputRequired(), Length(min=8, max=30)],
+        render_kw={"placeholder": "Password"},
+    )
+    remember = BooleanField("Remember Me")
+    submit = SubmitField("Login")
 
 
 @app.route("/", strict_slashes=False)
@@ -111,15 +124,17 @@ def signup():
 @app.route("/user_dashboard", strict_slashes=False)
 def user_dashboard():
     """Return the user to dashboard."""
-    return render_template('user_dashboard.html')
+    return render_template("user_dashboard.html")
 
 
 @app.route("/logout", strict_slashes=False)
 def logout():
     """Logout the user and clear session data."""
-    session.pop('profile', None)
-    return redirect(url_for('landing_page'))
+    session.pop("profile", None)
+    return redirect(url_for("landing_page"))
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
     app.run(host="0.0.0.0", port=5000, debug=True)

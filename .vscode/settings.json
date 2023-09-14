@@ -3,5 +3,10 @@
     "[django-html]": {
         "editor.formatOnSave": false
     },
-    "code-runner.clearPreviousOutput": false
+    "code-runner.clearPreviousOutput": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "python.analysis.typeCheckingMode": "basic"
 }
