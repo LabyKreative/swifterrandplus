@@ -15,7 +15,10 @@ load_dotenv()  # take environment variables from .env.
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
+app.app_context().push()
 
 app.secret_key = os.environ["APP_SECRET_KEY"]
 app.config["TEMPLATES_AUTO_RELOAD"] = True
